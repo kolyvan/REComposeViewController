@@ -35,7 +35,10 @@
 
 @end
 
-@implementation REComposeViewController
+@implementation REComposeViewController {
+    
+    BOOL _appearAnimationFlag;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -121,29 +124,37 @@
 
     _backgroundView.frame = _rootViewController.view.bounds;
     
-    if (REUIKitIsFlatMode()) {
-        [self layoutWithOrientation:self.interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
-        self.containerView.alpha = 0;
-        [self.sheetView.textView becomeFirstResponder];
-    } else {
-        [UIView animateWithDuration:0.4 animations:^{
-            [self.sheetView.textView becomeFirstResponder];
-            [self layoutWithOrientation:self.interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
-        }];
+    if (parent) {
+        
+        if (!_appearAnimationFlag) {
+        
+            _appearAnimationFlag = YES;
+            
+            if (REUIKitIsFlatMode()) {
+                [self layoutWithOrientation:self.interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
+                self.containerView.alpha = 0;
+                [self.sheetView.textView becomeFirstResponder];
+            } else {
+                [UIView animateWithDuration:0.4 animations:^{
+                    [self.sheetView.textView becomeFirstResponder];
+                    [self layoutWithOrientation:self.interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
+                }];
+            }
+            
+            [UIView animateWithDuration:0.3
+                                  delay:0
+                                options:UIViewAnimationOptionCurveEaseInOut
+                             animations:^{
+                                 if (REUIKitIsFlatMode()) {
+                                     self.containerView.alpha = 1;
+                                 }
+                                 self.backgroundView.alpha = 1;
+                             } completion:nil];
+            
+        }
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewOrientationDidChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
     }
-    
-    [UIView animateWithDuration:0.3
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                        if (REUIKitIsFlatMode()) {
-                            self.containerView.alpha = 1;
-                        }
-                        self.backgroundView.alpha = 1;
-    } completion:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewOrientationDidChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
-
 }
 
 - (void)presentFromRootViewController
@@ -163,6 +174,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear: animated];
+    _appearAnimationFlag = NO;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
