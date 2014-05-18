@@ -37,7 +37,8 @@
 
 @implementation REComposeViewController {
     
-    BOOL _appearAnimationFlag;
+    BOOL                    _appearAnimationFlag;
+    UITapGestureRecognizer  *_tapGestureRecognizer;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -116,6 +117,11 @@
     [_sheetView.attachmentViewButton addTarget:self
                                         action:@selector(didTapAttachmentView:)
                               forControlEvents:UIControlEventTouchUpInside];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        _tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+        [_backgroundView addGestureRecognizer:_tapGestureRecognizer];
+    }
 }
 
 - (void)didMoveToParentViewController:(UIViewController *)parent
@@ -387,6 +393,17 @@
 - (void)viewOrientationDidChanged:(NSNotification *)notification
 {
     [self layoutWithOrientation:self.interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
+}
+
+#pragma mark - gesture recognizer
+
+- (void) handleTap:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded &&
+        gestureRecognizer.view == _backgroundView)
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 @end
