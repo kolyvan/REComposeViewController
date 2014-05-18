@@ -127,10 +127,10 @@
 - (void)didMoveToParentViewController:(UIViewController *)parent
 {
     [super didMoveToParentViewController:parent];
-
-    _backgroundView.frame = _rootViewController.view.bounds;
     
     if (parent) {
+        
+        _backgroundView.frame = _rootViewController.view.bounds;
         
         if (!_appearAnimationFlag) {
         
