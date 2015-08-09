@@ -43,9 +43,9 @@
         _navigationItem = [[UINavigationItem alloc] initWithTitle:@""];
         _navigationBar.items = @[_navigationItem];
         
-        UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringWithDefaultValue(@"REComposeSheetView_Cancel", nil, [NSBundle mainBundle], @"Cancel", @"Cancel") style:UIBarButtonItemStyleBordered target:self action:@selector(cancelButtonPressed)];
+        UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringWithDefaultValue(@"REComposeSheetView_Cancel", nil, [NSBundle mainBundle], @"Cancel", @"Cancel") style:UIBarButtonItemStylePlain target:self action:@selector(cancelButtonPressed)];
         
-        UIBarButtonItem *postButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringWithDefaultValue(@"REComposeSheetView_Post", nil, [NSBundle mainBundle], @"Post", @"Post") style:REUIKitIsFlatMode() ? UIBarButtonItemStyleDone : UIBarButtonItemStyleBordered target:self action:@selector(postButtonPressed)];
+        UIBarButtonItem *postButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringWithDefaultValue(@"REComposeSheetView_Post", nil, [NSBundle mainBundle], @"Post", @"Post") style:REUIKitIsFlatMode() ? UIBarButtonItemStyleDone : UIBarButtonItemStylePlain target:self action:@selector(postButtonPressed)];
         
         if (!REUIKitIsFlatMode()) {
             _navigationItem.leftBarButtonItem = cancelButtonItem;

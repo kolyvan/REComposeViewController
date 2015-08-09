@@ -185,7 +185,7 @@
 		30118CBE1631D0DD00B82F14 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Roman Efimov";
 			};
 			buildConfigurationList = 30118CC11631D0DD00B82F14 /* Build configuration list for PBXProject "REComposeViewControllerExample" */;
@@ -258,7 +258,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -287,7 +286,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -316,7 +314,7 @@
 				GCC_PREFIX_HEADER = "REComposeViewControllerExample/REComposeViewControllerExample-Prefix.pch";
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				INFOPLIST_FILE = "REComposeViewControllerExample/REComposeViewControllerExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "48FE4017-C1BC-4B45-B4FF-A16C301799CD";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "48FE4017-C1BC-4B45-B4FF-A16C301799CD";
@@ -333,7 +331,7 @@
 				GCC_PREFIX_HEADER = "REComposeViewControllerExample/REComposeViewControllerExample-Prefix.pch";
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				INFOPLIST_FILE = "REComposeViewControllerExample/REComposeViewControllerExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

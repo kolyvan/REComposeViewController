@@ -10,29 +10,29 @@
 	<string>REComposeViewControllerExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C8B3ED46-C440-4126-A89F-68766BABDFA7</key>
-		<string>ssh://github.com/kolyvan/REComposeViewController.git</string>
+		<key>B633EFFE0377E5E6D400664ED2E079D5E0D5105D</key>
+		<string>github.com:kolyvan/REComposeViewController.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>REComposeViewControllerExample/REComposeViewControllerExample.xcodeproj/project.xcworkspace</string>
+	<string>REComposeViewControllerExample/REComposeViewControllerExample.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C8B3ED46-C440-4126-A89F-68766BABDFA7</key>
+		<key>B633EFFE0377E5E6D400664ED2E079D5E0D5105D</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/kolyvan/REComposeViewController.git</string>
+	<string>github.com:kolyvan/REComposeViewController.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C8B3ED46-C440-4126-A89F-68766BABDFA7</string>
+	<string>B633EFFE0377E5E6D400664ED2E079D5E0D5105D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C8B3ED46-C440-4126-A89F-68766BABDFA7</string>
+			<string>B633EFFE0377E5E6D400664ED2E079D5E0D5105D</string>
 			<key>IDESourceControlWCCName</key>
 			<string>REComposeViewController</string>
 		</dict>

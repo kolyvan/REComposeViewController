@@ -136,14 +136,16 @@
         
             _appearAnimationFlag = YES;
             
+            const UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
+            
             if (REUIKitIsFlatMode()) {
-                [self layoutWithOrientation:self.interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
+                [self layoutWithOrientation:interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
                 self.containerView.alpha = 0;
                 [self.sheetView.textView becomeFirstResponder];
             } else {
                 [UIView animateWithDuration:0.4 animations:^{
                     [self.sheetView.textView becomeFirstResponder];
-                    [self layoutWithOrientation:self.interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
+                    [self layoutWithOrientation:interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
                 }];
             }
             
@@ -392,7 +394,8 @@
 
 - (void)viewOrientationDidChanged:(NSNotification *)notification
 {
-    [self layoutWithOrientation:self.interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
+    const UIInterfaceOrientation interfaceOrientation = [UIApplication sharedApplication].statusBarOrientation;
+    [self layoutWithOrientation:interfaceOrientation width:self.view.frame.size.width height:self.view.frame.size.height];
 }
 
 #pragma mark - gesture recognizer
